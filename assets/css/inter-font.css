@@ -1,0 +1,14 @@
+:root, input, button, textarea {
+  font-family: Inter, sans-serif;
+  font-feature-settings:
+    'calt' 1, /* contextual alternatives */
+    'cv09' 1, /* flat-top 3 */
+    'cv02' 1, /* open 4 */
+    'cv03' 1, /* open 6 */
+    'cv04' 1, /* open 9 */
+    'cv08' 1, /* Uppercase I with serifs */
+    'cv05' 1; /* Lowercase l with tail */
+}
+@supports (font-variation-settings: normal) {
+  :root { font-family: InterVariable, sans-serif; }
+}

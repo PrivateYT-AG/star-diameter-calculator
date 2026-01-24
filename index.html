@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="stylesheet" href="./assets/css/inter-font.css">
+  <link rel="preconnect" href="https://rsms.me/">
+  <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon">
+  <title>Star Diameter Calculator</title>
+</head>
+<body>
+  <div class="navbar">
+    <header>
+      <h1><a href="#" class="section-links" id="sdc-title">Star Diameter Calculator</a></h1>
+    </header>
+    <nav>
+      <a href="#" class="section-links view-link" data-target="help-menu">Help</a>
+      <a href="#" class="section-links view-link" data-target="options">Options</a>
+      <a href="#" class="section-links view-link" data-target="about">About</a>
+      <a href="#" class="section-links view-link">GitHub</a>
+      <a href="#" class="section-links view-link">Report issue</a>
+    </nav>
+  </div>
+  <main>
+    <div id="top-page">
+      <div id="calculator">
+        <p id="calc-desc">Simple calculator to calculate a star's diameter.</p>
+        <input type="text" id="star-input" inputmode="numeric" maxlength="20" pattern="[0-9]*" autocomplete="off" placeholder="Enter the star's radius in solar radii...">
+        <div id="button-container">
+          <button type="button" onclick="getStarDiameter()" id="calculate" class="calculator-button">Calculate diameter</button>
+          <button type="button" onclick="clearResult()" id="clear" class="calculator-button">Clear result</button>
+        </div>
+        <p id="result" aria-live="polite"></p>
+        <p id="error" aria-live="polite"></p>
+      </div>
+    </div>
+    <div id="info">
+      <article id="how-it-works">
+        <h2>How does the calculation work?</h2>
+        <p>The calculator starts with the star's radius, measured in solar radii (R<sub>☉</sub>, 695,700 km). It converts this value into kilometers and then multiplies it by two to find the star's diameter.</p>
+      </article>
+      <article id="star-table">
+        <h2>Star table</h2>
+        <p>Below is a table of well-known stars and their sizes.</p>
+        <table>
+          <tr>
+            <th>Star</th><th>Radius in R<sub>☉</sub></th><th class="tooltip">Diameter in km
+              <span class="tooltip-text">The star's diameter in kilometers. Diameter = 2 solar radii.</span>
+            </th><th>Type</th>
+          </tr>
+          <tr>
+            <td>Sun</td><td>1</td><td>~1.4 million km</td><td>Yellow dwarf</td>
+          </tr>
+          <tr>
+            <td>Sirius</td><td>1.713</td><td>~2.4 million km</td><td>Main-sequence</td>
+          </tr>
+          <tr>
+            <td>Pollux</td><td>8.97</td><td>~12.5 million km</td><td>Orange giant</td>
+          </tr>
+          <tr>
+            <td>Rigel</td><td>74.1</td><td>~100 million km</td><td>Blue supergiant</td>
+          </tr>
+          <tr>
+            <td>Betelgeuse</td><td>764</td><td>~1 billion km</td><td>Red supergiant</td>
+          </tr>
+        </table>
+      </article>
+      <article id="limitations">
+        <h2>Limitations</h2>
+        <p>This calculator assumes that all stars are perfectly spherical. While this works well for most stars, it can introduce errors for those that are not. Some stars spin so quickly that they bulge at the equator (becoming oblate), making their diameters vary depending on where you measure. Examples include <b>Vega</b>, <b>Altair</b>, and <b>Achernar</b>, where this simple calculation doesn't provide accurate results.</p>
+      </article>
+    </div>
+    <div id="help-menu" class="popup hidden">
+      <button class="close-x" aria-label="Close">&times;</button>
+      <h2>Help</h2>
+      <h3>Controls</h3>
+      <ul>
+        <li><kbd>Enter</kbd> - Calculate result</li>
+        <li><kbd>Ctrl</kbd>+<kbd>Backspace</kbd> - Clear result and input</li>
+        <li><kbd>Esc</kbd> - Clear result and input / close popup window</li>
+      </ul>
+      <h2>Frequently Asked Questions</h2>
+      <h3>The calculator shows an error.</h3>
+      <p>This can happen if:</p>
+      <ul>
+        <li>The input is not a valid number (it contains letters, symbols, etc.)</li>
+        <li>The number is 0 or negative.</li>
+        <li>The number is greater than 10,000 (limited for stability purposes)</li>
+      </ul>
+    </div>
+    <div id="options" class="popup hidden">
+      <button class="close-x" aria-label="close">&times;</button>
+      <h2>Options</h2>
+      <div class="option">
+        <label>Theme</label>
+        <div class="button-group">
+          <button data-theme="light">Light</button>
+          <button data-theme="dark">Dark</button>
+          <button data-theme="system">System</button>
+        </div>
+      </div>
+      <div class="option">
+        <label for="language">Language</label>
+        <div class="dropdown">
+          <button type="button" class="dropdown-trigger">English</button>
+          <ul class="dropdown-menu hidden">
+            <li data-lang="en">English</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div id="about" class="popup hidden">
+      <button class="close-x" aria-label="close">&times;</button>
+      <h2>About</h2>
+      <p>A simple tool that calculates a star's diameter from its radius, in solar radii (R<sub>☉</sub>).</p>
+      <p><b>Note:</b> <i>Values are simplified for educational purposes.</i></p>
+      <p><b>Version</b>: 0.1.0</p>
+    </div>
+  </main>
+  <footer>
+    <div id="overlay" class="hidden"></div>
+    <div id="license" class="popup hidden">
+      <button class="close-x" aria-label="Close">&times;</button>
+      <h2>The MIT License</h2>
+      <p>Copyright (c) 2025-2026 PrivateYT-AG</p>
+      <p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+      <p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+      <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+    </div>
+    <p>&copy;2025-2026 by PrivateYT-AG. Licensed under the
+      <a href="#" class="section-links view-link" data-target="license">MIT license</a>.
+    </p>
+  </footer>
+  <script src="./assets/js/script.js"></script>
+  <script src="./assets/js/theme-switch.js"></script>
+  <noscript>
+    <h1>JavaScript is disabled</h1>
+    <p>This website needs JavaScript to work correctly. Please enable JavaScript in your browser settings and refresh the page.</p>
+  </noscript>
+</body>
+</html>

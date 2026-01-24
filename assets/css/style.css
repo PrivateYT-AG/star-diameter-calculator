@@ -1,0 +1,319 @@
+body {
+  font-family: Inter, sans-serif;
+  font-variant-numeric: tabular-nums;
+  font-size: 1rem;
+  margin: 0px;
+}
+h2 {
+  line-height: 1;
+  margin-bottom: 0.25em
+}
+header {
+  display: inline-flex;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  padding-left: 1rem;
+  gap: 2rem;
+}
+p#result {
+  margin-top: 0.5rem;
+  margin-bottom: 0rem;
+}
+p#error {
+  color: #e00;
+  margin-top: 0rem;
+  margin-bottom: 0rem;
+}
+.navbar h1 {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 0
+}
+.navbar ul {
+  list-style-type: none;
+}
+.navbar ul li {
+  display: inline-block;
+  margin-right: 1rem;
+}
+#top-page, button.calculator-button, th, .popup {
+  background-color: #f4f4f4;
+}
+.navbar, #calculator, footer {
+  background-color: #e0e0e0;
+}
+.navbar {
+  justify-content: start;
+  padding: 0.5rem;
+  display: flex;
+  top: 0;
+  position: sticky;
+  z-index: 97;
+}
+.tooltip {
+  cursor: help;
+  position: relative;
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-underline-offset: 2px;
+}
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 10rem;
+  background: #000d;
+  border: 0.25em solid #002;
+  color: #fff;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+#top-page {
+  padding: 1rem;
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#calculator {
+  padding: 1em;
+  border-radius: 2em;
+  box-shadow: 0rem 0.5rem 24px #0003;
+  display: block;
+}
+#calc-desc {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+}
+#info {
+  margin: 1rem;
+}
+button:disabled {
+  cursor: not-allowed;
+}
+#button-container {
+  display: flex;
+  gap: 0.5rem;
+}
+button.calculator-button {
+  padding: 0.5rem;
+  border-radius: 999em;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.25s;
+  margin-top: 0.5rem;
+  flex: 1;
+}
+button.calculator-button:hover {
+  background-color: #d2d2d2;
+}
+button#calculate {
+  background-color: #0a0;
+}
+button#calculate:hover {
+  background-color: #0c0;
+}
+input[type=text] {
+  padding: 0.5rem;
+  border-radius: 999rem;
+  width: 24rem;
+  border: 0.125rem solid #bbb;
+  background-color: #f9f9f9;
+  font-variant-numeric: tabular-nums;
+}
+input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+#star-input {
+  margin-bottom: 0.25rem;
+}
+#info {
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+table {
+  border-collapse: collapse;
+}
+th, td {
+  border: 1px solid #000;
+  padding: 0.25em;
+  text-align: left;
+}
+a.section-links {
+  color: #000;
+  text-decoration: none;
+}
+a.section-links:hover {
+  text-decoration: underline;
+}
+footer {
+  padding: 0.5rem;
+  text-align: center;
+}
+.popup {
+  text-align: left;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  z-index: 99;
+  width: 80%;
+  max-width: 600px;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 2rem;
+  border-radius: 2rem;
+  box-shadow: 0rem 0.5rem 16px #0006;
+  color: #000;
+}
+.close-x {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #888;
+  line-height: 1;
+  transition: color 0.25s
+}
+.close-x:hover {
+  color: #aaa;
+}
+.hidden {
+  display: none !important;
+}
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #0004;
+  z-index: 98;
+  backdrop-filter: blur(4px)
+}
+kbd {
+  font-family: inherit;
+  display: inline-flex;
+  background-color: #ccc;
+  color: #222;
+  border: 2px solid #aaa;
+  box-shadow: 0 1px 0 #0006, inset 0 -1px 0 #0008;
+  font-size: 0.8rem;
+  border-radius: 0.5em;
+  margin: 0.2em;
+  padding: 0.25em;
+  min-width: 1.8em;
+  user-select: none;
+  pointer-events: none;
+}
+@media (prefers-color-scheme: dark) {
+  body, button.calculator-button {
+    color: #fff;
+    background-color: #222;
+  }
+  p#error {
+    color: #c00;
+  }
+  .navbar {
+    box-shadow: 0rem 0.5rem 16px #0002;
+  }
+  .navbar, footer, #calculator {
+    background-color: #333;
+  }
+  #calculator {
+    box-shadow: 0rem 0.5rem 16px #0006;
+  }
+  button:disabled {
+    color: #333;
+  }
+  button.calculator-button:hover {
+    background-color: #282828;
+  }
+  button#calculate {
+    background-color: #080;
+  }
+  button#calculate:hover {
+    background-color: #0a0;
+  }
+  input[type=text] {
+    color: #fff;
+    background-color: #222;
+    border: 0.125rem solid #444;
+  }
+  #top-page, th {
+    background-color: #282828;
+  }
+  th, td {
+    border: 1px solid #fff;
+  }
+  a.section-links {
+    color: #fff;
+  }
+  .popup {
+    background-color: #333;
+    color: #fff;
+  }
+  kbd {
+    background-color: #555;
+    color: #eee;
+    border: 2px solid #333;
+  }
+}
+/* Mobile Screens (and narrow ones) */
+@media (max-width:600px) {
+  /*
+  known bugs and issues:
+  - keep the navbar as is for now. Im too lazy to add a hamburger button thing
+  - the close x is at the center for some reason???
+  - EVERYTHING feels cramped
+  - maybe position #calculator to the top? so it (might) not interfere with the touch keyboard
+  */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbar h1 {
+    font-size: 1.2rem;
+    padding-left: 0;
+  }
+  #top-page {
+    padding: 2rem 1rem;
+    flex-direction: column;
+    text-align: center;
+  }
+  #calculator {
+    width: 80%;
+    margin: 1rem 0;
+  }
+  input[type=text], button {
+    width: 95%;
+    margin: 0.25rem 0;
+  }
+  table {
+    font-size: 0.9rem;
+    display: block;
+    overflow-x: auto;
+  }
+  .popup {
+    width: 66.67%;
+  }
+}
