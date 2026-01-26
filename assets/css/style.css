@@ -140,9 +140,18 @@ p#error {
   margin: 1rem;
 }
 button {
-  background-color: var(--input-border-color);
   color: var(--text-color);
   cursor: pointer;
+}
+button.theme-switch-btn {
+  padding: 0.5rem;
+  border-radius: 0.5em;
+  border: none;
+  background-color: var(--calculator-button-bg-color);
+  transition: background-color 0.25s;
+}
+button.theme-switch-btn:hover {
+  background-color: var(--calculator-button-bg-color-hover);
 }
 button:disabled {
   cursor: not-allowed;
@@ -209,6 +218,7 @@ footer {
   text-align: center;
 }
 .popup {
+  background-color: var(--navbar-bg-color);
   text-align: left;
   position: fixed;
   top: 50%;
