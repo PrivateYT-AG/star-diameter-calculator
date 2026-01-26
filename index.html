@@ -17,7 +17,10 @@
     </header>
     <nav>
       <a href="#" class="section-links view-link" data-target="help-menu">Help</a>
-      <a href="#" class="section-links view-link" data-target="options">Options</a>
+      <!-- option window is disabled because I'm working on a custom dropdown -->
+      <div class="na-cursor-wrapper">
+        <a href="#" class="disabled-link section-links view-link" data-target="options" aria-disabled="true">Options</a>
+      </div>
       <a href="#" class="section-links view-link" data-target="about">About</a>
       <a href="https://github.com/PrivateYT-AG/star-diameter-calculator/tree/main" class="section-links view-link">GitHub</a>
       <a href="https://github.com/PrivateYT-AG/star-diameter-calculator/issues" class="section-links view-link">Report issue</a>
@@ -93,22 +96,16 @@
     <div id="options" class="popup hidden">
       <button class="close-x" aria-label="close">&times;</button>
       <h2>Options</h2>
-      <div class="option">
-        <label>Theme</label>
-        <div class="button-group">
-          <button data-theme="light">Light</button>
-          <button data-theme="dark">Dark</button>
-          <button data-theme="system">System</button>
-        </div>
-      </div>
-      <div class="option">
-        <label for="language">Language</label>
-        <div class="dropdown">
-          <button type="button" class="dropdown-trigger">English</button>
-          <ul class="dropdown-menu hidden">
-            <li data-lang="en">English</li>
-          </ul>
-        </div>
+      <div class="dropdown" data-dropdown>
+        <button type="button" class="dropdown__button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="dropdown-label dropdown-value" id="dropdown-button">
+          <span id="dropdown-value" class="dropdown__value">Select an Option</span>
+        </button>
+        <ul class="dropdown__list" role="listbox" tabindex="-1" aria-labelledby="dropdown-label" id="dropdown-list">
+          <li class="dropdown__option" role="option" tabindex="-1" data-value="option-1">Option 1</li>
+          <li class="dropdown__option" role="option" tabindex="-1" data-value="option-2">Option 2</li>
+          <li class="dropdown__option" role="option" tabindex="-1" data-value="option-3">Option 3</li>
+        </ul>
+        <span id="dropdown-label">Choose an Option</span>
       </div>
     </div>
     <div id="about" class="popup hidden">
