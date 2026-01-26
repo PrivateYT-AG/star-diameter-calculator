@@ -18,9 +18,7 @@
     <nav>
       <a href="#" class="section-links view-link" data-target="help-menu">Help</a>
       <!-- option window is disabled because I'm working on a custom dropdown -->
-      <div class="na-cursor-wrapper">
-        <a href="#" class="disabled-link section-links view-link" data-target="options" aria-disabled="true">Options</a>
-      </div>
+      <a href="#" class="section-links view-link" data-target="options">Options</a>
       <a href="#" class="section-links view-link" data-target="about">About</a>
       <a href="https://github.com/PrivateYT-AG/star-diameter-calculator/tree/main" class="section-links view-link">GitHub</a>
       <a href="https://github.com/PrivateYT-AG/star-diameter-calculator/issues" class="section-links view-link">Report issue</a>
@@ -78,7 +76,7 @@
     <div id="help-menu" class="popup hidden">
       <button class="close-x" aria-label="Close">&times;</button>
       <h2>Help</h2>
-      <h3>Controls</h3>
+      <h3>Keyboard Shortcuts</h3>
       <ul>
         <li><kbd>Enter</kbd> - Calculate result</li>
         <li><kbd>Ctrl</kbd>+<kbd>Backspace</kbd> - Clear result and input</li>
@@ -96,7 +94,11 @@
     <div id="options" class="popup hidden">
       <button class="close-x" aria-label="close">&times;</button>
       <h2>Options</h2>
-      <div class="dropdown" data-dropdown>
+      <p>Theme:</p>
+      <button type="button" id="light-mode-btn">Light</button>
+      <button type="button" id="dark-mode-btn">Dark</button>
+      <!-- Custom Dropdown layout, hidden for now -->
+      <div class="dropdown hidden" data-dropdown>
         <button type="button" class="dropdown__button" aria-haspopup="listbox" aria-expanded="false" aria-labelledby="dropdown-label dropdown-value" id="dropdown-button">
           <span id="dropdown-value" class="dropdown__value">Select an Option</span>
         </button>

@@ -79,6 +79,7 @@ document.addEventListener("keydown", function(event) {
   }
 });
 
+// open/close popup window function
 document.querySelectorAll(".view-link").forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
