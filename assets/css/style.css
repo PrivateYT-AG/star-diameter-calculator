@@ -1,10 +1,10 @@
 :root {
   --bg-color: #fff;
-  --navbar-bg-color: #e0e0e0;
+  --navbar-footer-bg-color: #e0e0e0;
   --navbar-shadow: 0px 0.5rem 16px #0001;
   --top-page-bg-color: #f4f4f4;
-  --calculator-button-bg-color: #f4f4f4;
-  --calculator-button-bg-color-hover: #ebebeb;
+  --button-bg-color: #f4f4f4;
+  --button-bg-color-hover: #ebebeb;
   --calculator-shadow: 0rem 0.5rem 16px #0003;
   --calculate-button-bg-color: #0c0;
   --calculate-button-bg-color-hover: #0a0;
@@ -17,11 +17,11 @@
 }
 .dark-mode {
   --bg-color: #222;
-  --navbar-bg-color: #333;
+  --navbar-footer-bg-color: #333;
   --navbar-shadow: 0rem 0.5rem 16px #0002;
   --top-page-bg-color: #282828;
-  --calculator-button-bg-color: #222;
-  --calculator-button-bg-color-hover: #282828;
+  --button-bg-color: #222;
+  --button-bg-color-hover: #282828;
   --calculator-shadow: 0rem 0.5rem 16px #0006;
   --calculate-button-bg-color: #080;
   --calculate-button-bg-color-hover: #0a0;
@@ -79,7 +79,7 @@ p#error {
   background-color: var(--top-page-bg-color);
 }
 .navbar, #calculator, footer {
-  background-color: var(--navbar-bg-color);
+  background-color: var(--navbar-footer-bg-color);
 }
 .navbar {
   justify-content: start;
@@ -147,11 +147,11 @@ button.theme-switch-btn {
   padding: 0.5rem;
   border-radius: 0.5em;
   border: none;
-  background-color: var(--calculator-button-bg-color);
+  background-color: var(--button-bg-color);
   transition: background-color 0.25s;
 }
 button.theme-switch-btn:hover {
-  background-color: var(--calculator-button-bg-color-hover);
+  background-color: var(--button-bg-color-hover);
 }
 button:disabled {
   cursor: not-allowed;
@@ -164,13 +164,13 @@ button.calculator-button {
   padding: 0.5rem;
   border-radius: 999em;
   border: none;
-  background-color: var(--calculator-button-bg-color);
+  background-color: var(--button-bg-color);
   transition: background-color 0.25s;
   margin-top: 0.5rem;
   flex: 1;
 }
 button.calculator-button:hover {
-  background-color: var(--calculator-button-bg-color-hover);
+  background-color: var(--button-bg-color-hover);
 }
 button#calculate {
   background-color: var(--calculate-button-bg-color);
@@ -218,7 +218,7 @@ footer {
   text-align: center;
 }
 .popup {
-  background-color: var(--navbar-bg-color);
+  background-color: var(--navbar-footer-bg-color);
   text-align: left;
   position: fixed;
   top: 50%;
