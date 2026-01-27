@@ -106,3 +106,22 @@ overlay.addEventListener("click", () => {
     closeWindow(win);
   });
 });
+
+// Hamburger button for when viewport is less than 800px wide
+const hamburger = document.querySelector('.hamburger');
+const navbar = document.querySelector('.navbar');
+const nav = navbar.querySelector('nav');
+
+hamburger.addEventListener('click', () => {
+  const isOpen = nav.classList.toggle('open');
+  navbar.classList.toggle('menu-open', isOpen);
+  hamburger.setAttribute('aria-expanded', isOpen);
+});
+
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    navbar.classList.remove('menu-open');
+    hamburger.setAttribute('aria-expanded', false);
+  });
+});
