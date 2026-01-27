@@ -14,6 +14,7 @@
   --kbd-bg-color: #ccc;
   --kbd-border-color: #aaa;
   --kbd-text-color: #222;
+  --popup-window-bg-color: #eee;
   --text-color: #000;
 }
 .dark-mode {
@@ -31,6 +32,7 @@
   --kbd-bg-color: #555;
   --kbd-border-color: #333;
   --kbd-text-color: #eee;
+  --popup-window-bg-color: #282828;
   --text-color: #fff;
 }
 body {
@@ -69,14 +71,7 @@ p#error {
   padding: 1rem;
   margin: 0
 }
-.navbar ul {
-  list-style-type: none;
-}
-.navbar ul li {
-  display: inline-block;
-  margin-right: 1rem;
-}
-#top-page, th, .popup {
+#top-page, th {
   background-color: var(--top-page-bg-color);
 }
 .navbar, #calculator, footer {
@@ -143,8 +138,6 @@ p#error {
 button {
   color: var(--text-color);
   cursor: pointer;
-}
-button {
   padding: 0.5rem;
   border-radius: 0.5em;
   border: none;
@@ -219,7 +212,7 @@ footer {
   text-align: center;
 }
 .popup {
-  background-color: var(--navbar-footer-bg-color);
+  background-color: var(--popup-window-bg-color);
   text-align: left;
   position: fixed;
   top: 50%;
@@ -234,7 +227,7 @@ footer {
   border-radius: 2rem;
   box-shadow: 0rem 0.5rem 16px #0006;
 }
-.close-x {
+button.close-x {
   position: absolute;
   top: 16px;
   right: 16px;
@@ -247,7 +240,7 @@ footer {
   line-height: 1;
   transition: color 0.25s
 }
-.close-x:hover {
+button.close-x:hover {
   color: #aaa;
 }
 .hidden {
@@ -283,13 +276,16 @@ kbd {
   /*
   known bugs and issues:
   - keep the navbar as is for now. Im too lazy to add a hamburger button thing
-  - the close x is at the center for some reason???
+  - the close x is at the center for some reason??? Idk why
   - EVERYTHING feels cramped
   - maybe position #calculator to the top? so it (might) not interfere with the touch keyboard
   */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
+  }
+  nav {
+    display: none;
   }
   .navbar h1 {
     font-size: 1.2rem;
@@ -314,6 +310,12 @@ kbd {
     overflow-x: auto;
   }
   .popup {
-    width: 66.67%;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  button.close-x {
+    width: 3rem; /* workaround fix for button appearing in center - it's because i'm lazy */
+    font-size: 2.25rem;
   }
 }
