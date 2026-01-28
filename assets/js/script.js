@@ -44,8 +44,8 @@ function validateNumberInput(inputId,errorId) {
     console.error("Value must be greater than zero.");
     return null;
   } else if (numberValue > MAX_INPUT_VALUE) {
-    document.getElementById(errorId).textContent = "Input value cannot be more than " + MAX_INPUT_VALUE + ".";
-    console.error("Input value cannot be more than " + MAX_INPUT_VALUE + ".");
+    document.getElementById(errorId).textContent = `Input value cannot be more than ${MAX_INPUT_VALUE}.`;
+    console.error(`Input value cannot be more than ${MAX_INPUT_VALUE}.`);
     return null;
   }
   document.getElementById(errorId).textContent = "";
@@ -60,8 +60,8 @@ function getStarDiameter() {
   }
 
   const diameter = starRadius * SOLAR_RADIUS * 2;
-  console.log("Diameter:", formatNumber(diameter), "km");
-  document.getElementById("result").textContent = "Diameter: " + formatNumber(diameter) + " km";
+  console.log(`Diameter: ${formatNumber(diameter)} km`);
+  document.getElementById("result").textContent = `Diameter: ${formatNumber(diameter)} km`;
 }
 
 // keyboard shortcuts, etc
