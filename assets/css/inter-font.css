@@ -1,4 +1,4 @@
-:root, input, button, textarea {
+:root {
   font-family: Inter, sans-serif;
   font-feature-settings:
     'calt' 1, /* contextual alternatives */
