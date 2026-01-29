@@ -1,7 +1,8 @@
-:root {
+:root, input, button, textarea {
   font-family: Inter, sans-serif;
   font-feature-settings:
     'calt' 1, /* contextual alternatives */
+    'tnum' 1, /* tabular numbers */
     'cv09' 1, /* flat-top 3 */
     'cv02' 1, /* open 4 */
     'cv03' 1, /* open 6 */
