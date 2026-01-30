@@ -70,7 +70,7 @@ nav {
 header {
   display: inline-flex;
 }
-.navbar, #calculator, footer {
+.navbar, footer {
   background-color: var(--navbar-footer-bg-color);
 }
 /* Main content and info */
@@ -98,7 +98,8 @@ footer {
   text-align: center;
 }
 /* Calculator */
-#calculator {
+.calculator--single-input {
+  background-color: var(--navbar-footer-bg-color);
   padding: 1em;
   border-radius: 2em;
   width: 32rem;
@@ -138,7 +139,7 @@ button#calculate {
 button#calculate:hover {
   background-color: var(--calculate-button-bg-color-hover);
 }
-#button-container {
+.calculator-button-container {
   display: flex;
   gap: 0.5rem;
 }
