@@ -45,12 +45,20 @@ body {
   margin: 0px;
   line-height: 1.5;
 }
-h2 {
-  line-height: 1;
-  margin-bottom: 0.25em
+/* Navbar */
+.navbar {
+  justify-content: start;
+  padding: 0.5rem;
+  display: flex;
+  top: 0;
+  position: sticky;
+  z-index: 97;
+  box-shadow: var(--navbar-shadow);
 }
-header {
-  display: inline-flex;
+.navbar h1 {
+  font-size: 1.5rem;
+  padding: 1rem;
+  margin: 0
 }
 nav {
   display: flex;
@@ -58,6 +66,81 @@ nav {
   justify-content: left;
   padding-left: 1rem;
   gap: 2rem;
+}
+header {
+  display: inline-flex;
+}
+.navbar, #calculator, footer {
+  background-color: var(--navbar-footer-bg-color);
+}
+/* Main content and info */
+#top-page, th {
+  background-color: var(--top-page-bg-color);
+}
+#top-page {
+  padding: 1rem;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+h2 {
+  line-height: 1;
+  margin-bottom: 0.25em
+}
+#info {
+  margin: 1rem;
+  padding: 0.5rem;
+  overflow-x: auto;
+}
+footer {
+  padding: 0.5rem;
+  text-align: center;
+}
+/* Calculator */
+#calculator {
+  padding: 1em;
+  border-radius: 2em;
+  width: 32rem;
+  box-shadow: var(--calculator-shadow);
+  display: block;
+}
+#calc-desc {
+  margin-top: 0.25rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.125rem;
+  margin-right: 0.125rem;
+}
+input[type=text] {
+  color: var(--text-color);
+  font-size: 0.875rem;
+  padding: 0.5rem;
+  border-radius: 999px;
+  width: 100%;
+  border: 0.125rem solid var(--input-border-color);
+  background-color: var(--input-bg-color);
+}
+input::placeholder {
+  color: #888;
+  opacity: 1;
+}
+#star-input {
+  margin-bottom: 0.25rem;
+}
+button.calculator-button {
+  border-radius: 999px;
+  margin-top: 0.5rem;
+  flex: 1;
+}
+button#calculate {
+  background-color: var(--calculate-button-bg-color);
+}
+button#calculate:hover {
+  background-color: var(--calculate-button-bg-color-hover);
+}
+#button-container {
+  display: flex;
+  gap: 0.5rem;
 }
 p#result {
   margin-top: 0.5rem;
@@ -68,26 +151,67 @@ p#error {
   margin-top: 0rem;
   margin-bottom: 0rem;
 }
-.navbar h1 {
-  font-size: 1.5rem;
-  padding: 1rem;
-  margin: 0
+/* Tables */
+table {
+  border-collapse: collapse;
 }
-#top-page, th {
-  background-color: var(--top-page-bg-color);
+th, td {
+  border: 1px solid var(--text-color);
+  padding: 0.25em;
+  text-align: left;
 }
-.navbar, #calculator, footer {
-  background-color: var(--navbar-footer-bg-color);
-}
-.navbar {
-  justify-content: start;
+/* Buttons and links */
+button {
+  color: var(--text-color);
+  font-size: 0.875rem;
+  cursor: pointer;
   padding: 0.5rem;
-  display: flex;
-  top: 0;
-  position: sticky;
-  z-index: 97;
-  box-shadow: var(--navbar-shadow);
+  border-radius: 0.5em;
+  border: none;
+  background-color: var(--button-bg-color);
+  transition: background-color 0.25s;
 }
+button:hover {
+  background-color: var(--button-bg-color-hover);
+}
+button:disabled {
+  cursor: not-allowed;
+}
+button.close-x {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  cursor: pointer;
+  background: none;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #888;
+  line-height: 1;
+  transition: color 0.25s
+}
+button.close-x:hover {
+  color: #aaa;
+}
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  width: 3rem;
+  cursor: pointer;
+}
+.hamburger:hover {
+  background: none;
+}
+.section-links {
+  color: var(--text-color);
+  text-decoration: none;
+}
+.section-links:hover {
+  text-decoration: underline;
+}
+/* Utility */
 .tooltip {
   cursor: help;
   position: relative;
@@ -115,115 +239,6 @@ p#error {
   visibility: visible;
   opacity: 1;
 }
-#top-page {
-  padding: 1rem;
-  height: 85vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-#calculator {
-  padding: 1em;
-  border-radius: 2em;
-  width: 32rem;
-  box-shadow: var(--calculator-shadow);
-  display: block;
-}
-#calc-desc {
-  margin-top: 0.25rem;
-  margin-bottom: 0.5rem;
-  margin-left: 0.125rem;
-  margin-right: 0.125rem;
-}
-#info {
-  margin: 1rem;
-  padding: 0.5rem;
-  overflow-x: auto;
-}
-button {
-  color: var(--text-color);
-  font-size: 0.875rem;
-  cursor: pointer;
-  padding: 0.5rem;
-  border-radius: 0.5em;
-  border: none;
-  background-color: var(--button-bg-color);
-  transition: background-color 0.25s;
-}
-button:hover {
-  background-color: var(--button-bg-color-hover);
-}
-button:disabled {
-  cursor: not-allowed;
-}
-#button-container {
-  display: flex;
-  gap: 0.5rem;
-}
-button.calculator-button {
-  padding: 0.5rem;
-  border-radius: 999px;
-  border: none;
-  background-color: var(--button-bg-color);
-  transition: background-color 0.25s;
-  margin-top: 0.5rem;
-  flex: 1;
-}
-button.calculator-button:hover {
-  background-color: var(--button-bg-color-hover);
-}
-button#calculate {
-  background-color: var(--calculate-button-bg-color);
-}
-button#calculate:hover {
-  background-color: var(--calculate-button-bg-color-hover);
-}
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
-  width: 3rem;
-  cursor: pointer;
-}
-.hamburger:hover {
-  background: none;
-}
-input[type=text] {
-  color: var(--text-color);
-  font-size: 0.875rem;
-  padding: 0.5rem;
-  border-radius: 999px;
-  width: 100%;
-  border: 0.125rem solid var(--input-border-color);
-  background-color: var(--input-bg-color);
-}
-input::placeholder {
-  color: #888;
-  opacity: 1;
-}
-#star-input {
-  margin-bottom: 0.25rem;
-}
-table {
-  border-collapse: collapse;
-}
-th, td {
-  border: 1px solid var(--text-color);
-  padding: 0.25em;
-  text-align: left;
-}
-.section-links {
-  color: var(--text-color);
-  text-decoration: none;
-}
-.section-links:hover {
-  text-decoration: underline;
-}
-footer {
-  padding: 0.5rem;
-  text-align: center;
-}
 .popup {
   background-color: var(--popup-window-bg-color);
   text-align: left;
@@ -239,22 +254,6 @@ footer {
   padding: 2rem;
   border-radius: 2rem;
   box-shadow: 0rem 0.5rem 16px #0006;
-}
-button.close-x {
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  border: none;
-  cursor: pointer;
-  background: none;
-  font-size: 2rem;
-  font-weight: bold;
-  color: #888;
-  line-height: 1;
-  transition: color 0.25s
-}
-button.close-x:hover {
-  color: #aaa;
 }
 .hidden {
   display: none !important;
