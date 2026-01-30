@@ -3,12 +3,8 @@
   font-feature-settings:
     'calt' 1, /* contextual alternatives */
     'tnum' 1, /* tabular numbers */
-    'cv09' 1, /* flat-top 3 */
-    'cv02' 1, /* open 4 */
-    'cv03' 1, /* open 6 */
-    'cv04' 1, /* open 9 */
-    'cv08' 1, /* Uppercase I with serifs */
-    'cv05' 1; /* Lowercase l with tail */
+    'ss01' 1, /* alternate numbers, flat-top 3, open 4, 6, and 9 */
+    'ss04' 1 /* disambiguation, capital I with serifs, lowercase l with tail */
 }
 @supports (font-variation-settings: normal) {
   :root { font-family: InterVariable, sans-serif; font-optical-sizing: auto; }
