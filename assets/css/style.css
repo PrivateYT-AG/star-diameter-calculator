@@ -125,7 +125,7 @@ p#error {
 #calculator {
   padding: 1em;
   border-radius: 2em;
-  width: 28rem;
+  width: 32rem;
   box-shadow: var(--calculator-shadow);
   display: block;
 }
@@ -142,6 +142,7 @@ p#error {
 }
 button {
   color: var(--text-color);
+  font-size: 0.875rem;
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 0.5em;
@@ -190,6 +191,7 @@ button#calculate:hover {
 }
 input[type=text] {
   color: var(--text-color);
+  font-size: 0.875rem;
   padding: 0.5rem;
   border-radius: 999px;
   width: 100%;
