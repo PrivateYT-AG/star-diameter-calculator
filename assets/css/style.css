@@ -18,6 +18,7 @@
   --kbd-border-color: #aaa;
   --kbd-text-color: #222;
   --popup-window-bg-color: #eee;
+  --focus-outline: 2px solid #222;
   --text-color: #000;
 }
 .dark-mode {
@@ -36,6 +37,7 @@
   --kbd-border-color: #333;
   --kbd-text-color: #eee;
   --popup-window-bg-color: #282828;
+  --focus-outline: 2px solid #ddd;
   --text-color: #fff;
 }
 body {
@@ -74,10 +76,10 @@ header {
   background-color: var(--navbar-footer-bg-color);
 }
 /* Main content and info */
-#top-page, th {
+.calculator-container, th {
   background-color: var(--top-page-bg-color);
 }
-#top-page {
+.calculator-container {
   padding: 1rem;
   height: 85vh;
   display: flex;
@@ -112,7 +114,7 @@ footer {
   margin-left: 0.125rem;
   margin-right: 0.125rem;
 }
-input[type=text] {
+input {
   color: var(--text-color);
   font-size: 0.875rem;
   padding: 0.5rem;
@@ -124,6 +126,10 @@ input[type=text] {
 input::placeholder {
   color: #888;
   opacity: 1;
+}
+input:focus {
+  outline: none;
+  box-shadow: none;
 }
 #star-input {
   margin-bottom: 0.25rem;
