@@ -1,5 +1,5 @@
 :root, input, button, textarea {
-  font-family: Inter, sans-serif;
+  font-family: Inter, system-ui, sans-serif;
   font-feature-settings:
     'calt' 1, /* contextual alternatives */
     'tnum' 1, /* tabular numbers */
@@ -7,7 +7,7 @@
     'ss04' 1 /* disambiguation, capital I with serifs, lowercase l with tail */
 }
 @supports (font-variation-settings: normal) {
-  :root { font-family: InterVariable, sans-serif; font-optical-sizing: auto; }
+  :root { font-family: InterVariable, system-ui, sans-serif; font-optical-sizing: auto; }
 }
 
 @font-face {
