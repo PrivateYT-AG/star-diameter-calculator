@@ -26,7 +26,9 @@
     <div id="top-page" class="calculator-container">
       <div class="calculator--single-input">
         <p id="calc-desc">Simple calculator to calculate a star's diameter.</p>
-        <input type="text" id="star-input" inputmode="numeric" maxlength="32" pattern="[0-9.]*" autocomplete="off" placeholder="Enter the star's radius in solar radii...">
+        <label class="tooltip">
+          <input type="text" id="star-input" inputmode="numeric" maxlength="32" pattern="[0-9.]*" autocomplete="off" placeholder="Enter the star's radius in solar radii...">
+        </label>
         <div class="calculator-button-container">
           <button type="button" onclick="getStarDiameter()" id="calculate" class="calculator-button">Calculate diameter</button>
           <button type="button" onclick="clearResult()" id="clear" class="calculator-button">Clear result</button>
