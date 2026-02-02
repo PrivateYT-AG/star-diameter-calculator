@@ -374,18 +374,18 @@ kbd {
     display: block;
     top: 8px;
   }
-  #top-page {
+  .calculator-container {
     padding: 2rem 1rem;
     flex-direction: column;
     text-align: center;
   }
-  #calculator {
+  .calculator--single-input {
     position: absolute;
     top: 25%;
     width: 80%;
     margin: 1rem 0;
   }
-  input[type=text], button {
+  input, button {
     margin: 0.25rem 0;
   }
   table {
