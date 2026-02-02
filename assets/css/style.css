@@ -19,6 +19,15 @@
   --kbd-text-color: #222;
   --popup-window-bg-color: #eee;
   --focus-outline: 2px solid #222;
+  --dropdown-bg-color: ;
+  --dropdown-border: ;
+  --dropdown-muted: ;
+  --dropdown-hover-color: ;
+  --dropdown-focus-color: ;
+  --dropdown-border-radius: ;
+  --dropdown-shadow: ;
+  --dropdown-padding: ;
+  --dropdown-width: ;
   --text-color: #000;
 }
 .dark-mode {
@@ -292,6 +301,29 @@ kbd {
   min-width: 1.8em;
   user-select: none;
   pointer-events: none;
+}
+.dropdown {
+  position: relative;
+  width: var(--dropdown-width);
+}
+.dropdown__button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--dropdown-bg-color);
+  color: var(--text-color);
+  border: var(--dropdown-border);
+  border-radius: var(--dropdown-border-radius);
+  padding: var(--dropdown-padding);
+  cursor: pointer;
+  user-select: none;
+}
+.dropdown__value {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 /* Mobile Screens (and narrow ones) */
 @media (max-width:800px) {
