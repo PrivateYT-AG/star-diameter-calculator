@@ -3,7 +3,7 @@
 }
 :root {
   --base-font-size: 1rem;
-  --bg-color: #fff;
+  --bg-color: #fafafa;
   --navbar-footer-bg-color: #e0e0e0;
   --navbar-shadow: 0px 0.5rem 16px #0001;
   --top-page-bg-color: #f4f4f4;
@@ -28,7 +28,7 @@
   --dropdown-shadow: ;
   --dropdown-padding: ;
   --dropdown-width: ;
-  --text-color: #000;
+  --text-color: #222;
 }
 .dark-mode {
   --bg-color: #222;
@@ -47,7 +47,7 @@
   --kbd-text-color: #eee;
   --popup-window-bg-color: #282828;
   --focus-outline: 2px solid #ddd;
-  --text-color: #fff;
+  --text-color: #e8e8e8;
 }
 body {
   background-color: var(--bg-color);
