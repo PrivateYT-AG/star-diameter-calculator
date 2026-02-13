@@ -78,7 +78,28 @@ document.addEventListener("keydown", function(event) {
     clearResult()
   }
 });
+/* Calculator animations (does not work for now, overflows instead)
+const container = document.querySelector(".calculator--single-input");
 
+let isAnimating = false;
+
+const observer = new ResizeObserver(() => {
+  if (isAnimating) return;
+  isAnimating = true;
+  const startHeight = container.offsetHeight;
+  container.style.height = startHeight + "px";
+  container.offsetHeight;
+  const endHeight = container.scrollHeight;
+  container.style.height = endHeight + "px";
+  container.addEventListener("transitionend", () => {
+    container.style.height = "auto";
+    isAnimating = false;
+  },
+  {once: true});
+});
+
+observer.observe(container);
+*/
 // open/close popup window function
 document.querySelectorAll(".view-link").forEach(link => {
   link.addEventListener("click", e => {
