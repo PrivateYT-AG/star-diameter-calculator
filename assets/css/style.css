@@ -76,6 +76,10 @@ nav {
 }
 header {
   display: inline-flex;
+  font-size: 1.5rem;
+  padding: 1rem;
+  font-weight: 700;
+  margin: 0
 }
 .navbar, footer {
   background-color: var(--navbar-footer-bg-color);
