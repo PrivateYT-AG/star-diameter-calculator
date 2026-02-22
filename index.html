@@ -27,6 +27,7 @@
       <div class="calculator--single-input">
         <p id="calc-desc">Simple calculator to calculate a star's diameter.</p>
         <label class="tooltip">
+          <span class="tooltip-text" id="star-input-tooltip">Enter a decimal number.<br>For example: 1, 1.23</span>
           <input type="text" id="star-input" inputmode="numeric" maxlength="32" pattern="[0-9.]*" autocomplete="off" placeholder="Enter the star's radius in solar radii...">
         </label>
         <div class="calculator-button-container">
@@ -108,7 +109,7 @@
           <li class="dropdown__option" role="option" tabindex="-1" data-value="option-2">Option 2</li>
           <li class="dropdown__option" role="option" tabindex="-1" data-value="option-3">Option 3</li>
         </ul>
-        <span id="dropdown-label">Choose an Option</span>
+        <span id="dropdown-label" class="sr-only">Choose an Option</span>
       </div>
     </div>
     <div id="about" class="popup hidden">
