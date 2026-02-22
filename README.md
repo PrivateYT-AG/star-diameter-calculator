@@ -12,6 +12,8 @@ This app is not hosted as a website yet, so you will need to run it locally. Cur
 - Unzip the downloaded `.zip` file
 - Open `index.html` on your browser
 
+Note that you have to update this app manually.
+
 ## How it works
 It uses a simple formula:
 
