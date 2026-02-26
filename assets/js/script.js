@@ -101,6 +101,19 @@ const observer = new ResizeObserver(() => {
 observer.observe(container);
 */
 // open/close popup window function
+document.querySelectorAll(".calculator-button").forEach(button => {
+  button.addEventListener("click", e => {
+    const calculateButton = document.getElementById("calculate");
+    const clearButton = document.getElementById("clear");
+
+    if (button === calculateButton) {
+      getStarDiameter();
+    } else if (button === clearButton) {
+      clearResult();
+    }
+  });
+});
+
 document.querySelectorAll(".view-link").forEach(link => {
   link.addEventListener("click", e => {
     e.preventDefault();
