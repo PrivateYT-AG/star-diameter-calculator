@@ -103,12 +103,11 @@ observer.observe(container);
 // open/close popup window function
 document.querySelectorAll(".calculator-button").forEach(button => {
   button.addEventListener("click", e => {
-    const calculateButton = document.getElementById("calculate");
-    const clearButton = document.getElementById("clear");
+    const button = e.target;
 
-    if (button === calculateButton) {
+    if (button.id === "calculate") {
       getStarDiameter();
-    } else if (button === clearButton) {
+    } else if (button.id === "clear") {
       clearResult();
     }
   });
