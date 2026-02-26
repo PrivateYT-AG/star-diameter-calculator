@@ -257,7 +257,7 @@ button.close-x:hover {
   transition: opacity 0.25s;
 }
 .tooltip-text#star-input-tooltip {
-  transform: translateX(-50%) translateY(160%);
+  transform: translateX(-50%) translateY(200%);
 }
 .tooltip:hover .tooltip-text {
   visibility: visible;
