@@ -337,6 +337,7 @@ kbd {
   top: calc(100% + 8px);
   left: 0;
   width: 100%;
+  border-radius: 0.75rem;
   background-color: var(--dropdown-bg-color);
   border: 1px solid var(--dropdown-border);
   box-shadow: var(--dropdown-shadow);
@@ -357,7 +358,7 @@ kbd {
 }
 .dropdown__option {
   padding: 10px 10px;
-  border-radius: 10px;
+  border-radius: 0.75rem;
   cursor: pointer;
 }
 .dropdown__option:hover, .dropdown__option[aria-selected="true"], .dropdown__option:focus-visible {
