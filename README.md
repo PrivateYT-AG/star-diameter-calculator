@@ -5,15 +5,6 @@ A simple web-based tool to measure a star's diameter, from its radius in solar r
 - Takes a star's **radius** (in solar radii, R☉)
 - Calculator converts it to kilometers, doubles it, giving the **diameter** 
 
-## How to use (for now)
-This app is not hosted as a website yet, so you will need to run it locally. Currently, it only supports PC.
-- Click on the green **Code** button on the main page
-- Select **Download ZIP**
-- Unzip the downloaded `.zip` file
-- Open `index.html` on your browser
-
-Note that you have to update this app manually.
-
 ## How it works
 It uses a simple formula:
 
