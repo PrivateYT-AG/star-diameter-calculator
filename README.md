@@ -1,5 +1,5 @@
 # Star Diameter Calculator
-A simple web-based tool to measure a star's diameter, from its radius in solar radii (R☉).
+A simple web-based tool to measure a star's diameter, from its radius in solar radii (R☉). You can visit the site [here](https://privateyt-ag.github.io/star-diameter-calculator/)
 
 ## What it does
 - Takes a star's **radius** (in solar radii, R☉)
