@@ -92,6 +92,7 @@ document.querySelectorAll('.calculator-button').forEach(button => {
   });
 });
 
+// replace with <dialog> because I think this isn't good
 document.querySelectorAll('.view-link').forEach(link => {
   link.addEventListener('click', e => {
     e.preventDefault();
@@ -122,11 +123,13 @@ overlay.addEventListener('click', () => {
 // Hamburger button for when viewport is less than 800px wide
 const hamburger = document.querySelector('.hamburger');
 const navbar = document.querySelector('.navbar');
+const headerTitle = document.querySelector('.title-container');
 const nav = navbar.querySelector('nav');
 
 hamburger.addEventListener('click', () => {
   const isOpen = nav.classList.toggle('open');
   navbar.classList.toggle('menu-open', isOpen);
+  headerTitle.classList.toggle('hidden', isOpen);
   hamburger.setAttribute('aria-expanded', isOpen);
 });
 
@@ -134,6 +137,7 @@ nav.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
     navbar.classList.remove('menu-open');
+    headerTitle.classList.remove('hidden');
     hamburger.setAttribute('aria-expanded', false);
   });
 });
