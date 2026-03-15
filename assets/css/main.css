@@ -297,15 +297,14 @@ kbd {
 }
 /* Mobile Screens (and narrow ones) */
 @media (max-width:800px) {
-  .navbar.menu-open header {
-    display: none;
+  .navbar {
+    height: 68px;
   }
   nav {
     display: none;
   }
   nav.open {
     display: flex;
-    padding: 1.3rem;
   }
   .hamburger {
     display: block;
@@ -319,13 +318,7 @@ kbd {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-  }
-  .navbar h1 {
-    font-size: 1.2rem;
-    padding-left: 0.5rem;
-  }
-  .navbar header {
-    flex: 1;
+    height: auto;
   }
   nav {
     display: none;
@@ -335,7 +328,9 @@ kbd {
     gap: 0.75rem;
   }
   nav a {
+    text-align: center;
     padding: 0.25rem 0;
+    width: 100%;
   }
   nav.open {
     display: flex;
@@ -369,7 +364,7 @@ kbd {
     transform: translateX(-50%);
   }
   button.close-x {
-    width: 3rem; /* workaround fix for button appearing in center - it's because i'm lazy */
+    width: 3rem;
     font-size: 2.25rem;
   }
 }
