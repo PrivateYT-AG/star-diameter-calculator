@@ -18,8 +18,9 @@
   --kbd-border-color: #aaa;
   --kbd-text-color: #222;
   --popup-window-bg-color: #ddd;
-  --focus-outline: 2px solid #222;
+  --focus-border: 2px solid #ccc;
   --text-color: #222;
+  --headings-bottom-border-color: 2px solid #00000033;
 }
 .dark-mode {
   --bg-color: #222;
@@ -37,8 +38,9 @@
   --kbd-border-color: #333;
   --kbd-text-color: #eee;
   --popup-window-bg-color: #2c2c2c;
-  --focus-outline: 2px solid #ddd;
+  --focus-border: 2px solid #555;
   --text-color: #e8e8e8;
+  --headings-bottom-border-color: 2px solid #ffffff33;
 }
 body {
   background-color: var(--bg-color);
@@ -50,31 +52,25 @@ body {
 /* Navbar */
 .navbar {
   justify-content: start;
-  padding: 0.5rem;
+  padding: 1rem;
   display: flex;
   top: 0;
   position: sticky;
   z-index: 97;
   box-shadow: var(--navbar-shadow);
 }
-.navbar h1 {
-  font-size: 1.5rem;
-  padding: 1rem;
-  margin: 0
-}
 nav {
   display: flex;
   align-items: center;
   justify-content: left;
-  padding-left: 1rem;
   gap: 2rem;
 }
-header {
-  display: inline-flex;
+.title-container {
+  padding-right: 2rem;
+}
+#sdc-title {
   font-size: 1.5rem;
-  padding: 1rem;
-  font-weight: 700;
-  margin: 0
+  font-weight: 500;
 }
 .navbar, footer {
   background-color: var(--navbar-footer-bg-color);
@@ -85,14 +81,17 @@ header {
 }
 .calculator-container {
   padding: 1rem;
-  height: 85vh;
+  height: calc(95vh - 68px);
   display: flex;
   align-items: center;
   justify-content: center;
 }
 h2 {
   line-height: 1;
-  margin-bottom: 0.25em
+  margin: 0;
+  padding: 0.5rem 0 0.5rem;
+  font-weight: 500;
+  border-bottom: var(--headings-bottom-border-color);
 }
 #info {
   margin: 1rem;
@@ -131,9 +130,9 @@ input::placeholder {
   color: #888;
   opacity: 1;
 }
-input:focus {
+input:focus-visible {
   outline: none;
-  box-shadow: none;
+  border: var(--focus-border);
 }
 #star-input {
   margin-bottom: 0.25rem;
@@ -311,8 +310,8 @@ kbd {
   .hamburger {
     display: block;
     position: absolute;
-    top: 12px;
-    right: 16px;
+    top: 8px;
+    right: 8px;
   }
 }
 @media (max-width:600px) {
@@ -343,7 +342,7 @@ kbd {
   }
   .hamburger {
     display: block;
-    top: 8px;
+    top: 4px;
   }
   .calculator-container {
     padding: 2rem 1rem;
