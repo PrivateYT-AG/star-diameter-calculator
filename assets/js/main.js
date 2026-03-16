@@ -52,7 +52,7 @@ function validateNumberInput(inputId,errorId) {
   return numberValue;
 }
 
-function getStarDiameter() {
+function calculateDiameter() {
   const starRadius = validateNumberInput('star-input','error');
   if (starRadius === null) {
     document.getElementById('result').textContent = '';
@@ -68,7 +68,7 @@ function getStarDiameter() {
 document.addEventListener('keydown', function(event) {
   const key = event.key;
   if (key === 'Enter') {
-    getStarDiameter()
+    calculateDiameter()
   } else if (event.ctrlKey && key === 'Backspace') {
     clearResult()
   } else if (key === 'Escape') {
@@ -85,7 +85,7 @@ document.querySelectorAll('.calculator-button').forEach(button => {
     const button = e.target;
 
     if (button.id === 'calculate') {
-      getStarDiameter();
+      calculateDiameter();
     } else if (button.id === 'clear') {
       clearResult();
     }
